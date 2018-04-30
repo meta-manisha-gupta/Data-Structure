@@ -25,23 +25,23 @@ public class InfixToPostfix {
 			}
 			else if (isOperator(ch)) {
 				if( stack[top] == 0 || ( precedence(ch) > precedence(stack[top]) ) || stack[top]=='(') { 
-		               push(ch); 
-		            } 
-		         } 
-		         else if(precedence(ch) >= precedence(stack[top])) { 
-		            outputPostfix[j++]=pop();
-		            push(ch);
-		         } 
-		         else if(ch=='(') { 
-		            while((ch = pop())!='(') { 
-		               outputPostfix[j++]=ch;
-		        } 
+		               		push(ch); 
+		         	} 
+				 else if(precedence(ch) <= precedence(stack[top])) { 
+				    outputPostfix[j++]=pop();
+				    push(ch);
+				 } 
+			}
+			else if(ch==')') { 
+	            		while((ch = pop())!='(') { 
+	               			outputPostfix[j++]=ch;
+	            		} 
 			}
 		}
 		while( top != 0) { 
 	         outputPostfix[j++] = pop();
 	    } 
-	    for(int k = 0; k < infixNotation.length(); k++) {
+	    for(int k = 0; k < j; k++) {
 	    	System.out.println(k);
 	         System.out.print(outputPostfix[k]);    
 	      }
