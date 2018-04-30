@@ -49,7 +49,8 @@ public class ArrayListHandler {
 			   	   element = scan.nextInt();
 			   	   arrayInstance.removeElement(element);
 			   	   break;
-			case 7: break;
+			case 7: arrayInstance.removeAllElements();
+				break;
 			case 8:int resultantArray[] = arrayInstance.reverseList();	
 				   for (int i = 0; i < resultantArray.length; i++) {
 					   System.out.println(resultantArray[i]);
