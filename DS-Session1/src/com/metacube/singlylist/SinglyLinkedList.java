@@ -29,27 +29,32 @@ public class SinglyLinkedList {
 	public void insertAtLocation (int element, int location) {
 		int loc = 1;
 		Node node = new Node(element);
-		if ( location == 0) {
-			node.next = head;
-			head = node;
+		if ( location == 0 ) {
+			System.out.println("invalid location");
 		}
 		else {
-		Node q, prev = null;
-		q = head;
-		while ( q.next != null ) {
-			if ( loc == location){
-				break;
+			if ( location == 1) {
+				node.next = head;
+				head = node;
 			}
-			else{
-			prev = q;
-			q = q.next;
+			else {
+			Node q, prev = null;
+			q = head;
+			while ( q.next != null ) {
+				if ( loc == location){
+					break;
+				}
+				else{
+				prev = q;
+				q = q.next;
+				}
+				loc++;
 			}
-			loc++;
+				node.next = prev.next;
+				prev.next = node;
+			}
+			display();
 		}
-			node.next = prev.next;
-			prev.next = node;
-		}
-		display();
 	}
 	
 	/**
