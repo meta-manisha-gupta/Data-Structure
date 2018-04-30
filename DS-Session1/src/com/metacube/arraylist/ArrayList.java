@@ -93,7 +93,7 @@ public class ArrayList {
 	 * Below function removes all the elements from the list.
 	 * @param array
 	 */
-	void removeAllElements(int array[]) {
+	void removeAllElements() {
 		for (int j = 0; j < i; j++) {
 			removeElement(array[j]);
 		}
